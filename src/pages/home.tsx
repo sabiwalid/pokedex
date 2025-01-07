@@ -12,8 +12,7 @@ export default function Home() {
     if (type === "search") {
       navigate(`/pokemon/${query.toLowerCase()}`);
     } else if (type === "random") {
-      // You can generate a random Pokémon ID (1-898 is the range of Pokémon IDs in the game)
-      const randomId = Math.floor(Math.random() * 898) + 1; // Change 898 to the number of available Pokémon
+      const randomId = Math.floor(Math.random() * 100) + 1;
       navigate(`/pokemon/${randomId}`);
     }
   };

@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { Navigate, useNavigate, useParams } from "react-router";
+import { Navigate, useParams } from "react-router";
 import { useState } from "react";
 import { fetchPokemon } from "../api/pokemonApi";
 import { typeColors } from "../types/colors";
-import { MdArrowBackIosNew } from "react-icons/md";
 import Evolutions from "../components/Evolutions";
 import Description from "../components/Description";
 import { Tabs } from "../components/Tabs";
 import StatsComponent from "../components/stats";
 import TypeBadge from "../components/typeColor";
+import BackButton from "../components/BackButton";
 
 type Stat = {
   base_stat: number;
@@ -39,7 +39,6 @@ type PokemonData = {
 
 export default function Pokemon() {
   const { idOrName } = useParams<{ idOrName: string }>();
-  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(1);
 
   const {
@@ -83,16 +82,14 @@ export default function Pokemon() {
 
   return (
     <div
-      className="h-screen w-screen flex flex-col relative"
+      className="h-screen w-screen flex flex-col"
       style={{ backgroundColor }}
     >
-      {/* Back Button */}
-      <span onClick={() => navigate("/")} className="absolute">
-        <MdArrowBackIosNew className="w-[39px] h-[67px] text-white cursor-pointer ml-30 top-1/4" />
-      </span>
-
       {/* Header */}
-      <div style={{ backgroundColor }} className="h-1/5"></div>
+      <div style={{ backgroundColor }} className="h-1/5 relative">
+        {/* Back Button */}
+        <BackButton className="left-8 top-6 absolute" />
+      </div>
 
       {/* Content */}
       <div className="flex items-center justify-center h-4/5">
