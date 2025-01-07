@@ -9,10 +9,7 @@ const StatsComponent = ({ stats, color }: any) => {
         ({ stat, index, base_stat }: any) => (
           console.log({ stat }),
           (
-            <div
-              key={index}
-              className="flex items-center justify-between gap-4"
-            >
+            <div key={index} className="items-center gap-4">
               <span className="capitalize" style={{ color }}>
                 {stat?.name}
               </span>

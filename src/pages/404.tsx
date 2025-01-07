@@ -1,14 +1,9 @@
-import { MdArrowBackIosNew } from "react-icons/md";
-import { useNavigate } from "react-router";
+import BackButton from "../components/BackButton";
 
 export default function NotFound() {
-  const navigate = useNavigate();
   return (
     <div className="text-4xl bg-button h-screen w-screen text-center justify-center flex flex-col relative">
-      <MdArrowBackIosNew
-        className="text-8xl text-white absolute top-4 left-4 cursor-pointer"
-        onClick={() => navigate("/")}
-      />
+      <BackButton className="left-8 top-6 absolute" />
       <h1 className="text-center font-singleDay text-5xl text-white p-4">
         No Pokemon Found!
       </h1>
