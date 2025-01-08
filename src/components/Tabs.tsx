@@ -25,7 +25,7 @@ export function Tabs({
           <a
             key={tab.label}
             role="tab"
-            className={`tab border-none rounded-full ${
+            className={`tab border-none rounded-full w-52 ${
               isActive ? "tab-active" : ""
             }`}
             style={{

@@ -34,18 +34,26 @@ const Description = ({ idOrName }: { idOrName: string | undefined }) => {
   const resultString = getFlavorTextString(descriptions);
 
   if (isLoading) {
-    return <span className="loading loading-spinner loading-lg"></span>;
+    return (
+      <span
+        className="loading loading-spinner loading-lg"
+        role="spinner"
+      ></span>
+    );
   }
 
   if (error || !resultString) {
     return (
-      <p className="p-4 color-[#4F4F4F] w-[972px] h-[46px] font-abel">
+      <p
+        className="p-4 text-pokemon font-normal w-[972px] h-[46px] text-center font-abel"
+        aria-label="desc"
+      >
         No Description Found!
       </p>
     );
   }
   return (
-    <p className="p-4 color-[#4F4F4F] w-[972px] h-[46px] font-abel">
+    <p className="p-4 text-pokemon font-normal w-[972px] h-[46px] font-abel">
       {resultString}
     </p>
   );

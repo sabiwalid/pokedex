@@ -1,4 +1,3 @@
-import React from "react";
 import { typeColors } from "../types/colors";
 type TypeBadgeProps = {
   type: string | undefined;

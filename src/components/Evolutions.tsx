@@ -56,7 +56,12 @@ const Evolutions = ({
   });
 
   if (isLoading) {
-    return <span className="loading loading-spinner loading-lg"></span>;
+    return (
+      <span
+        className="loading loading-spinner loading-lg"
+        role="spinner"
+      ></span>
+    );
   }
   console.log({ data });
   const evolutionChain = data?.data.pokemon_v2_evolutionchain[0];

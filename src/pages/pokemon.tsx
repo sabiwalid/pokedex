@@ -53,7 +53,11 @@ export default function Pokemon() {
   });
 
   if (isLoading) {
-    return <span className="loading loading-spinner loading-lg"></span>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
   }
 
   if (error) {
@@ -76,13 +80,13 @@ export default function Pokemon() {
     },
     {
       label: "MOVES",
-      content: <span>Tab not implemented</span>,
+      content: <span>Tab should not be implemented</span>,
     },
   ];
 
   return (
     <div
-      className="h-screen w-screen flex flex-col"
+      className="h-screen w-screen flex flex-col min-h-screen"
       style={{ backgroundColor }}
     >
       {/* Header */}
@@ -102,7 +106,7 @@ export default function Pokemon() {
               className="size-60 max-w-sm absolute -top-[130px] mb-4"
             />
             <div className="mt-20 flex flex-col items-center">
-              <h1 className="text-2xl text-[#4F4F4F] capitalize">
+              <h1 className="text-2xl text-pokemon capitalize">
                 {pokemon?.name}
               </h1>
               <div className="flex flex-wrap justify-center mt-4 gap-4">

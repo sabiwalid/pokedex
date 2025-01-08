@@ -8,6 +8,9 @@ export default {
       },
       colors: {
         button: "#FE5858",
+        primary: "#595854",
+        secondary: "#767676",
+        pokemon: "#4F4F4F",
       },
       fontFamily: {
         singleDay: ['"Single Day"', "cursive"],
